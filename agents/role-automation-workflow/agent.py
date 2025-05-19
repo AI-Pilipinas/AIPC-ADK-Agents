@@ -7,7 +7,7 @@ from .sub_agents.agent import (
     prompt_engineer_agent
 )
 
-# --- 1. Define Root Agents for Each Pipeline Stage ---
+# --- 1. Define Root Agent ---
 
 root_agent = SequentialAgent(
     name='workflow',
