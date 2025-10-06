@@ -1,0 +1,14 @@
+[project]
+name = "chore-organizer-agent"
+version = "0.1.0"
+description = "An intelligent chore organization system with multi-agent orchestration"
+requires-python = ">=3.12.0"
+
+dependencies = [
+    # Inherits core dependencies from root project
+    # Add agent-specific dependencies here
+]
+
+[tool.uv]
+# Agent-specific development dependencies (optional)
+dev-dependencies = []

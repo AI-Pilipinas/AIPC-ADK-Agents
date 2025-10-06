@@ -1,0 +1,15 @@
+[project]
+name = "life-agent"
+version = "0.1.0"
+description = "A personal life assistant that provides daily quotes, mood checks, and fun facts"
+requires-python = ">=3.12.0"
+
+dependencies = [
+    # Inherits core dependencies from root project
+    # Add agent-specific dependencies here
+    # Example: "requests>=2.31.0",
+]
+
+[tool.uv]
+# Agent-specific development dependencies (optional)
+dev-dependencies = []
