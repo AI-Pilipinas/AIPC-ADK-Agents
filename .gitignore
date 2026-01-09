@@ -4,20 +4,27 @@ __pycache__/
 *$py.class
 *.so
 .Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
 # Virtual environments
 .venv/
 venv/
 ENV/
 env/
-
-# uv
-.uv/
-uv.lock
-
-# Environment variables
-.env
-.env.local
 
 # IDE
 .vscode/
@@ -26,16 +33,32 @@ uv.lock
 *.swo
 *~
 
-# OS
-.DS_Store
-Thumbs.db
-
 # Testing
 .pytest_cache/
 .coverage
 htmlcov/
+.tox/
 
-# Build
-build/
-dist/
-*.egg-info/
+# MyPy
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Ruff
+.ruff_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+
+# Agent data
+agents/*/data/*.json
+!agents/*/data/.gitkeep

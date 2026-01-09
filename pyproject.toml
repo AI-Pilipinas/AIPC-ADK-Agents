@@ -19,9 +19,10 @@ classifiers = [
 # Core dependencies - only what's needed for the base project
 # Each agent manages its own dependencies in its own pyproject.toml
 dependencies = [
-    "google-adk>=1.15.1",
+    "google-adk>=1.16.0",
     "google-genai>=1.41.0",
     "typing-extensions>=4.15.0",
+    "google-cloud-aiplatform[adk,agent-engines]>=1.111",
 ]
 
 # Optional dependencies for specific agents
@@ -32,17 +33,38 @@ life-agent = []
 chore-organizer = []
 automation-analyst = []
 contract-analyzer = []
+personal-journal = []
 all-agents = [
     # Includes all agent-specific dependencies
+]
+
+[tool.uv.workspace]
+# Define workspace members (each agent is a separate package)
+members = [
+    "agents/todo-list",
+    "agents/life-agent",
+    "agents/chore-organizer",
+    "agents/automation_analyst",
+    "agents/personal-journal",
+]
+
+# Exclude certain directories from workspace detection
+exclude = [
+    "agents/capital-agent",
+    "agents/contract-anaylzer",
+    "agents/role-automation-workflow",
 ]
 
 [tool.uv]
 dev-dependencies = [
     "pytest>=8.0.0",
     "pytest-asyncio>=0.24.0",
+    "pytest-cov>=4.1.0",
     "black>=24.0.0",
     "ruff>=0.6.0",
     "mypy>=1.11.0",
+    "pre-commit>=3.5.0",
+    "commitizen>=3.13.0",
 ]
 
 [tool.black]
@@ -92,3 +114,26 @@ testpaths = ["tests"]
 python_files = ["test_*.py", "*_test.py"]
 python_classes = ["Test*"]
 python_functions = ["test_*"]
+addopts = "-v --strict-markers"
+
+[tool.commitizen]
+name = "cz_conventional_commits"
+version = "0.1.0"
+tag_format = "v$version"
+version_files = [
+    "pyproject.toml:version"
+]
+update_changelog_on_bump = true
+
+[tool.coverage.run]
+source = ["agents"]
+omit = [
+    "*/tests/*",
+    "*/__pycache__/*",
+    "*/.*",
+]
+
+[tool.coverage.report]
+precision = 2
+show_missing = true
+skip_covered = false

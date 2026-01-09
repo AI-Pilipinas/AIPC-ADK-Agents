@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: 💬 Ask a Question
+    url: https://github.com/ai-pilipinas-cebu/AIPC-ADK-Agents/discussions
+    about: Ask questions and discuss ideas with the community
+  - name: 📚 Documentation
+    url: https://github.com/ai-pilipinas-cebu/AIPC-ADK-Agents/blob/main/docs/CONTRIBUTING.md
+    about: Read our comprehensive documentation
+  - name: 🚀 Quick Start
+    url: https://github.com/ai-pilipinas-cebu/AIPC-ADK-Agents/blob/main/docs/QUICK_START.md
+    about: Get started with AIPC ADK Agents in 5 minutes

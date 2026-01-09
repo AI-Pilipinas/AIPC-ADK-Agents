@@ -2,7 +2,7 @@
 
 Welcome to the **AI Pilipinas Cebu Agent Collection** — a community-driven repository where we build, share, and collaborate on AI agents to solve real-world problems.
 
-Whether you're exploring agents with the [Google Agent Development Kit (ADK)](https://github.com/google/agent-development-kit), building something cool with LangChain, or just experimenting with your own ideas — this is the place for you.  
+Whether you're exploring agents with the [Google Agent Development Kit (ADK)](https://github.com/google/agent-development-kit), building something cool with LangChain, or just experimenting with your own ideas — this is the place for you.
 
 > 🌟 Our goal is to **empower Filipinos** to explore agentic AI and contribute to a shared ecosystem of smart, useful, and innovative agents.
 
@@ -31,10 +31,10 @@ Whether you're exploring agents with the [Google Agent Development Kit (ADK)](ht
    ```bash
    # macOS/Linux
    curl -LsSf https://astral.sh/uv/install.sh | sh
-   
+
    # Windows
    powershell -c "irm https://astral.sh/uv/install.ps1 | iex"
-   
+
    # Or with pip
    pip install uv
    ```
@@ -60,7 +60,7 @@ Whether you're exploring agents with the [Google Agent Development Kit (ADK)](ht
    ```bash
    # macOS/Linux
    source .venv/bin/activate
-   
+
    # Windows
    .venv\Scripts\activate
    ```
@@ -240,39 +240,74 @@ uv run mypy .
 
 ## 🤝 Contributing
 
-We welcome contributions! Please see [CONTRIBUTING.md](docs/CONTRIBUTING.md) for detailed guidelines.
+We'd love your contribution! Whether it's a new agent, bug fix, or documentation improvement.
 
-### Quick Contribution Guide
+**Read the full guide**: [CONTRIBUTING.md](docs/CONTRIBUTING.md)
+**Development Setup**: [DEVELOPMENT_SETUP.md](docs/DEVELOPMENT_SETUP.md) ⭐ **NEW**
 
-1. **Fork this repo**
-2. **Create a new branch**:
-   ```bash
-   git checkout -b feature/your-agent-name
-   ```
-3. **Add your agent** under `agents/your-agent-name/`:
-   ```
-   agents/your-agent-name/
-   ├── README.md          # Agent documentation
-   ├── __init__.py
-   ├── agent.py           # Main agent code
-   ├── prompt.py          # Agent prompts (if applicable)
-   ├── tools/             # Custom tools (if applicable)
-   │   ├── __init__.py
-   │   └── your_tool.py
-   └── sub_agents/        # Sub-agents (if applicable)
-   ```
-4. **Include a clear `README.md`** in your agent folder explaining:
-   - What it does
-   - How to use it
-   - Any special requirements
-   - Example usage
-5. **Test your agent**:
-   ```bash
-   uv run pytest tests/
-   uv run ruff check .
-   uv run black --check .
-   ```
-6. **Submit a Pull Request**!
+### 🚀 Quick Start for Contributors
+
+```bash
+# 1. Clone and setup
+git clone https://github.com/YOUR_USERNAME/AIPC-ADK-Agents.git
+cd AIPC-ADK-Agents
+make dev-setup  # Installs dependencies + pre-commit hooks
+
+# 2. Activate virtual environment
+source .venv/bin/activate
+
+# 3. Create your feature
+git checkout -b feature/your-feature
+
+# 4. Make changes and run checks
+make check  # Runs format, lint, type-check, and tests
+
+# 5. Commit with conventional commits
+make commit  # Interactive commit helper
+
+# 6. Push and create PR
+git push origin feature/your-feature
+```
+
+### 🛠️ Development Tools
+
+We provide a comprehensive development environment:
+
+- **Pre-commit hooks** - Auto-check code before commits
+- **Black** - Code formatting
+- **Ruff** - Fast linting
+- **MyPy** - Type checking
+- **Pytest** - Testing framework
+- **Commitizen** - Conventional commit helper
+- **Makefile** - Convenient command shortcuts
+- **CI/CD** - Automated checks on GitHub Actions
+
+Run `make help` to see all available commands!
+
+### 📝 Contribution Guidelines
+
+**Agent Structure**:
+```
+agents/your-agent-name/
+├── README.md          # Agent documentation
+├── pyproject.toml     # Agent dependencies
+├── __init__.py
+├── agent.py           # Main agent code
+├── prompt.py          # Agent prompts
+├── tools/             # Custom tools (if applicable)
+│   ├── __init__.py
+│   └── your_tool.py
+└── sub_agents/        # Sub-agents (if applicable)
+```
+
+**Rules to remember**:
+- Each agent lives in its own folder under `agents/`
+- Each agent manages its own dependencies via `pyproject.toml`
+- Include a README.md explaining what your agent does
+- Follow the code style (Black + Ruff)
+- Use conventional commits (`feat:`, `fix:`, `docs:`, etc.)
+- Run `make check` before submitting PR
+- Write tests for new features
 
 ---
 
@@ -333,6 +368,7 @@ AIPC-ADK-Agents/
 Comprehensive documentation is available in the [`docs/`](docs/) folder:
 
 - **[Quick Start Guide](docs/QUICK_START.md)** - Get started in 5 minutes
+- **[Development Setup](docs/DEVELOPMENT_SETUP.md)** - Complete dev environment setup ⭐ **NEW**
 - **[Contributing Guide](docs/CONTRIBUTING.md)** - How to contribute
 - **[Dependency Management](docs/DEPENDENCY_MANAGEMENT.md)** - Managing dependencies
 - **[Project Structure](docs/PROJECT_STRUCTURE.md)** - Understanding the codebase
@@ -346,6 +382,9 @@ Comprehensive documentation is available in the [`docs/`](docs/) folder:
 - 🐛 **Found a bug?** [Open an issue](https://github.com/ai-pilipinas-cebu/AIPC-ADK-Agents/issues)
 - 💡 **Have an idea?** [Start a discussion](https://github.com/ai-pilipinas-cebu/AIPC-ADK-Agents/discussions)
 - 🤝 **Want to collaborate?** Join our community discussions!
+
+### Community Guidelines
+We are committed to providing a welcoming and inclusive environment. Please read our [Code of Conduct](.github/CODE_OF_CONDUCT.md).
 
 ### Resources
 - [Google ADK Documentation](https://github.com/google/agent-development-kit)
